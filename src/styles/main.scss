@@ -1,0 +1,72 @@
+@import 'variables';
+
+@import 'header';
+@import 'footer';
+
+body {
+  margin: 0;
+  font-size: 12pt;
+  font-family: $ffSansSerif;
+  background-color: $white;
+
+  &.has-veil {
+    overflow: hidden;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $ffSerif;
+  line-height: 1;
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  color: $brightColor;
+
+  &:active,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.centered-content {
+  position: relative;
+  margin: 0 auto;
+  width: 720px;
+}
+
+.btn-primary {
+  border: 0;
+  padding: 6px 12px;
+  background-color: $lightGray;
+  font-size: 12pt;
+  color: $white;
+  cursor: pointer;
+
+  &:active {
+    background-color: $darkGray;
+  }
+}
+
+.btn-inline {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 12pt;
+  color: $brightColor;
+  cursor: pointer;
+
+  &:active,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+:focus {
+  outline: 2px solid $brightColor;
+}

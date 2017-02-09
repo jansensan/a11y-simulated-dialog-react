@@ -1,0 +1,10 @@
+### IGNORE FILES FROM GIT ###
+
+### MAC OSX FILES ###
+*._*
+*.DS_STORE
+
+### PROJECT DIRECTORIES AND FILES ###
+*.log
+/node_modules
+/www/index.min.js
