@@ -1,7 +1,7 @@
 {
   "name": "a11y-simulated-dialog-react",
   "version": "1.0.0",
-  "description": "Demo of an accessible simulated dialog (modal) in ES6.",
+  "description": "Demo of an accessible simulated dialog (modal) in React.",
   "author": "Mat Janson Blanchet <mat.jb@jansensan.net> (http://jansensan.net)",
   "license": "UNLICENSED",
   "repository": {
