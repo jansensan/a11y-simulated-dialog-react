@@ -9,7 +9,7 @@ export default class Veil extends Component {
   }
 
   // method definitions
-  onClicked() {
+  dismiss() {
     VeilModel.requestDismissal();
   }
 
@@ -38,7 +38,11 @@ export default class Veil extends Component {
   // react method definitions
   render() {
     return (
-      <div id="veil" className="veil hidden"></div>
+      <div
+        id="veil"
+        className="veil hidden"
+        onClick={this.dismiss}
+      ></div>
     );
   }
 
@@ -47,7 +51,6 @@ export default class Veil extends Component {
     this.element = document.getElementById('veil');
 
     // event/signals handlers
-    this.element.addEventListener('click', this.onClicked.bind(this));
     document.addEventListener('keydown', this.onKeyPressed.bind(this));
     VeilModel.dismissalRequested.add(this.onDismissalRequested, this);
     VeilModel.displayRequested.add(this.onDisplayRequested, this);

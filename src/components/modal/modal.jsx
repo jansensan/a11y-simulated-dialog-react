@@ -9,6 +9,10 @@ export default class Modal extends Component {
   }
 
   // method definitions
+  dismiss() {
+    ModalModel.requestDismissal();
+  }
+
   onCloseButtonClicked() {
     ModalModel.requestDismissal();
   }
@@ -101,11 +105,13 @@ export default class Modal extends Component {
             id="modalAcceptButton"
             className="btn-primary"
             type="button"
+            onClick={this.dismiss}
           >OK</button>
           <button
             id="modalCancelButton"
             className="btn-primary cancel-btn"
             type="button"
+            onClick={this.dismiss}
           >Cancel</button>
         </div>
         <button
@@ -113,6 +119,7 @@ export default class Modal extends Component {
           className="modal-close-btn btn-primary"
           type="button"
           aria-label="Close modal"
+          onClick={this.dismiss}
         >&times;</button>
       </div>
     );
@@ -126,7 +133,6 @@ export default class Modal extends Component {
     this.activeElement = null;
 
     // event/signals handlers
-    this.lastElement.addEventListener('click', this.onCloseButtonClicked.bind(this));
     document.addEventListener('keydown', this.onKeyPressed.bind(this));
     ModalModel.dismissalRequested.add(this.onDismissalRequested, this);
     ModalModel.displayRequested.add(this.onDisplayRequested, this);
