@@ -62,8 +62,8 @@ export default class Modal extends Component {
         event.preventDefault();
         event.stopPropagation();
         this.element.focus();
-
-      } else if (this.activeElement === this.element) {
+      }
+      if (this.activeElement === this.element) {
         event.preventDefault();
         event.stopPropagation();
         this.lastElement.focus();
@@ -128,8 +128,13 @@ export default class Modal extends Component {
   componentDidMount() {
     // dom elements
     this.element = document.getElementById('modal');
-    this.firstElement = document.getElementById('modalCancelButton');
-    this.lastElement = document.getElementById('modalCloseButton');
+    this.cancelButton = document.getElementById('modalCancelButton');
+    this.acceptButton = document.getElementById('modalAcceptButton');
+    this.closeButton = document.getElementById('modalCloseButton');
+
+    this.firstElement = this.acceptButton;
+    this.lastElement = this.closeButton;
+
     this.activeElement = null;
 
     // event/signals handlers
